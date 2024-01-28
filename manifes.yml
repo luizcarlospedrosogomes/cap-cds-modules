@@ -1,0 +1,10 @@
+applications:
+  - name: <%=project_name%>-api
+    path: .
+    buildpacks:
+      - nodejs_buildpack
+    memory: 256M
+    command: npm start
+    random-route: true
+    services:
+      - <%=service_xsuaa%>-xsuaa
