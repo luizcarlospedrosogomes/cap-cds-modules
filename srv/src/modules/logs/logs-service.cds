@@ -1,10 +1,6 @@
-using { managed  } from '@sap/cds/common';
+using model.logs as modelLogs from './logs-model';
 
+@path:'/logs-service'
 service LogsService {
-
-    entity logs : managed {
-       key id: UUID;
-        name: String(40);
-        details: String;
-    }
+    entity logs as projection on modelLogs.logs;
 }
