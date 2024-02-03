@@ -16,3 +16,5 @@
 
 #### desempenho app
     /status ou http://localhost:4004/status 
+
+# cf push
