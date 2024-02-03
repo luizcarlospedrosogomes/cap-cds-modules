@@ -1,0 +1,24 @@
+ID: cap-cds-modules-api
+_schema-version: '2.1'
+description: Example Modules
+version: 0.0.1
+modules:
+  - name: cap-cds-modules--db
+    requires:
+      - name: cap-cds-modules-hdi
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+    
+      
+
+      
+resources:
+  - name: cap-cds-modules-hdi
+    parameters:
+      service-name: db
+      config:
+        schema: SCHEMA_MODULES
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  

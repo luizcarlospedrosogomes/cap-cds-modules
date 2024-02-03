@@ -1,15 +1,1 @@
-{
-    "requires": {    
-      "auth": "dummy", 
-        "db": {
-          "[development]": {
-            "kind": "sqlite",
-            "impl": "@cap-js/sqlite",
-            "credentials": {
-              "database": "database.db",
-              "url": ":memory:" 
-            }
-        }
-      }
-    }
-}
+{}

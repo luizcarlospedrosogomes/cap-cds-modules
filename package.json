@@ -14,6 +14,7 @@
     "@sap-cloud-sdk/http-client": "^3.11.0",
     "@sap/cds": "^7.5.3",
     "@sap/cds-compiler": "^4.5.0",
+    "@sap/cds-dk": "^7.6.0",
     "@sap/cds-hana": "^2.0.0",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "@sap/hana-client": "^2.19",
@@ -57,6 +58,7 @@
   },
   "cds": {
     "requires": {
+      "auth": "dummy",
       "db": {
         "[development]": {
           "kind": "sqlite",
@@ -65,7 +67,7 @@
             "url": "memory"
           }
         },
-        "[production]": {
+        "[my-profile]": {
           "kind": "hana",
           "impl": "@sap/cds-hana",
           "deploy-format": "hdbtable"
@@ -80,17 +82,21 @@
       "target": "gen",
       "tasks": [
         {
-          "src": "srv",
+          "src": "srv/index.cds",
           "for": "hana",
           "options": {
-            "model":["srv/index.cds"]
+            "model": [
+              "srv/index.cds"
+            ]
           }
         },
         {
-          "src": "srv",
+          "src": "srv/index.cds",
           "for": "nodejs",
           "options": {
-            "model":["srv/index.cds"]
+            "model": [
+              "srv/index.cds"
+            ]
           }
         }
       ]

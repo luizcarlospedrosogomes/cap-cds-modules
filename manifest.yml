@@ -1,10 +1,11 @@
 applications:
-  - name: <%=project_name%>-api
+  - name: cap-cds-modules-api
     path: .
     buildpacks:
       - nodejs_buildpack
     memory: 256M
+    disk: 2048M
     command: npm start
-    random-route: true
+    random-route: false
     services:
-      - <%=service_xsuaa%>-xsuaa
+      - cap-cds-modules-hdi
